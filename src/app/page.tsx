@@ -2,6 +2,12 @@ const slider = ["1", "2", "3", "4", "5", "6", "7"];
 
 import "./style.css";
 
+function getPrevAndNextIndex(index: number, length: number) {
+  const prev = index === 0 ? length - 1 : index - 1;
+  const next = index === length - 1 ? 0 : index + 1;
+  return { prev, next };
+}
+
 export default function Home() {
   return (
     <main className="min-h-screen gap-24 p-3 md:p-12 lg:p-24">
@@ -103,76 +109,39 @@ export default function Home() {
             <h2 className="text-xl font-bold">Carousel with control buttons</h2>
             <button>copy button</button>
           </div>
-          <div className="relative w-full overflow-hidden">
-            <div className="bg-pink-400">{[1, 2, 3].map((v) => null)}</div>
-            <input
-              className="carousel-open hidden"
-              type="radio"
-              id="carousel-1"
-              name="carousel"
-              aria-hidden="true"
-              defaultChecked="checked"
-            />
-            <div className="carousel-item bg-">
-              <img src="http://fakeimg.pl/2000x800/0079D8/fff/?text=Without" />
-            </div>
-            <label
-              htmlFor="carousel-3"
-              className="carousel-control prev control-1"
-            >
-              ‹
-            </label>
-            <label
-              htmlFor="carousel-2"
-              className="carousel-control next control-1"
-            >
-              ›2
-            </label>
-            <input
-              className="carousel-open hidden"
-              type="radio"
-              id="carousel-2"
-              name="carousel"
-              aria-hidden="true"
-            />
-            <div className="carousel-item">
-              <img src="http://fakeimg.pl/2000x800/DA5930/fff/?text=JavaScript" />
-            </div>
-            <input
-              className="carousel-open hidden"
-              type="radio"
-              id="carousel-3"
-              name="carousel"
-              aria-hidden="true"
-            />
-            <div className="carousel-item">
-              <img src="http://fakeimg.pl/2000x800/F90/fff/?text=Carousel" />
-            </div>
 
-            <label
-              htmlFor="carousel-1"
-              className="carousel-control prev control-2"
-            >
-              ‹
-            </label>
-            <label
-              htmlFor="carousel-3"
-              className="carousel-control next control-2"
-            >
-              ›
-            </label>
-            <label
-              htmlFor="carousel-2"
-              className="carousel-control prev control-3"
-            >
-              ‹
-            </label>
-            <label
-              htmlFor="carousel-1"
-              className="carousel-control next control-3"
-            >
-              ›
-            </label>
+          <div className="relative h-48 w-full overflow-hidden">
+            {["Carousel", "Without", "Javascript"].map((v, i) => {
+              const { prev, next } = getPrevAndNextIndex(i, 3);
+
+              return (
+                <div key={v}>
+                  <input
+                    className="carousel-open hidden"
+                    type="radio"
+                    id={`carousel-${i + 1}`}
+                    name="carousel"
+                    aria-hidden="true"
+                    defaultChecked={i === 0}
+                  />
+                  <div className="carousel-item h-48 w-full border-4 border-amber-700 bg-amber-300">
+                    {v}
+                  </div>
+                  <label
+                    htmlFor={`carousel-${prev + 1}`}
+                    className={`carousel-control prev control-${i + 1}`}
+                  >
+                    ‹
+                  </label>
+                  <label
+                    htmlFor={`carousel-${next + 1}`}
+                    className={`carousel-control next control-${i + 1}`}
+                  >
+                    ›
+                  </label>
+                </div>
+              );
+            })}
             <ol className="carousel-indicators">
               <li>
                 <label htmlFor="carousel-1" className="carousel-bullet">
