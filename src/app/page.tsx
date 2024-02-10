@@ -24,13 +24,13 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mx-auto mt-24 max-w-5xl space-y-12 md:p-12 lg:p-24">
+      <div className="mx-auto mt-48 max-w-5xl space-y-12 sm:mt-36 md:mt-24 md:p-12 lg:p-24">
         <CardComponent title="Snap to center">
           <div className="flex snap-x snap-mandatory snap-center flex-nowrap gap-3 overflow-x-scroll">
             {slider.map((s) => (
               <div
                 key={s}
-                className="flex h-24 min-w-[150px] grow snap-center rounded border-4 border-blue-700 bg-blue-200 text-3xl md:min-w-[45%]"
+                className="h-24 min-w-[150px] grow snap-center border-4 border-blue-700 bg-blue-200 text-3xl md:min-w-[45%]"
               >
                 {s}
               </div>
@@ -39,11 +39,11 @@ export default function Home() {
         </CardComponent>
 
         <CardComponent title="Snap to start">
-          <div className="flex snap-x snap-mandatory snap-start flex-nowrap gap-3 overflow-x-scroll">
+          <div className="flex h-24 snap-x snap-mandatory snap-start flex-nowrap gap-3 overflow-x-scroll">
             {slider.map((s) => (
               <div
                 key={s}
-                className="flex h-24 min-w-[150px] grow snap-start rounded border-4 border-green-700 bg-green-200 text-3xl md:min-w-[30%]"
+                className="h-full min-w-[150px] grow snap-start border-4 border-green-700 bg-green-200 text-3xl md:min-w-[45%]"
               >
                 {s}
               </div>
@@ -52,11 +52,11 @@ export default function Home() {
         </CardComponent>
 
         <CardComponent title="Snap to end">
-          <div className="flex snap-x snap-mandatory snap-end flex-nowrap gap-3 overflow-x-scroll">
+          <div className="flex h-24 snap-x snap-mandatory snap-end flex-nowrap gap-3 overflow-x-scroll">
             {slider.map((s) => (
               <div
                 key={s}
-                className="flex h-24 min-w-[150px] grow snap-end rounded border-4 border-orange-700 bg-orange-200 text-3xl md:min-w-[30%]"
+                className="h-full min-w-[150px] grow snap-end border-4 border-orange-700 bg-orange-200 text-3xl md:min-w-[45%]"
               >
                 {s}
               </div>
@@ -65,11 +65,11 @@ export default function Home() {
         </CardComponent>
 
         <CardComponent title="Wide snap to start">
-          <div className="flex snap-x snap-mandatory snap-start flex-nowrap gap-3 overflow-x-scroll">
+          <div className="flex h-24 snap-x snap-mandatory snap-start flex-nowrap gap-3 overflow-x-scroll">
             {slider.map((s) => (
               <div
                 key={s}
-                className="flex h-24 min-w-[95%] grow snap-start rounded border-4 border-pink-700 bg-pink-200 text-3xl"
+                className="h-full min-w-[95%] grow snap-start border-4 border-pink-700 bg-pink-200 text-3xl"
               >
                 {s}
               </div>
@@ -78,11 +78,11 @@ export default function Home() {
         </CardComponent>
 
         <CardComponent title="Vertical">
-          <div className="max-h-24 snap-y snap-mandatory snap-start space-y-3 overflow-y-scroll">
+          <div className="h-24 snap-y snap-mandatory snap-start space-y-3 overflow-y-scroll">
             {slider.map((s) => (
               <div
                 key={s}
-                className={`flex h-24 grow snap-start rounded border-4 border-yellow-700 bg-yellow-200 text-3xl`}
+                className={`h-full grow snap-start border-4 border-yellow-700 bg-yellow-200 text-3xl`}
               >
                 {s}
               </div>
@@ -91,7 +91,7 @@ export default function Home() {
         </CardComponent>
 
         <CardComponent title="Carousel with control buttons">
-          <div className="relative h-48 w-full overflow-hidden">
+          <div className="relative h-24 w-full overflow-hidden">
             {slider.map((v, i) => {
               const { prev, next } = getPrevAndNextIndex(i, slider.length);
 
@@ -106,7 +106,7 @@ export default function Home() {
                     defaultChecked={i === 0}
                   />
                   <div
-                    className={`carousel-item absolute h-48 w-full border-4 border-gray-500 bg-gray-400 text-3xl text-white opacity-0 transition-all peer-checked:static peer-checked:opacity-100`}
+                    className={`absolute h-full w-full border-4 border-gray-500 bg-gray-400 text-3xl text-white opacity-0 transition-all peer-checked:static peer-checked:opacity-100`}
                   >
                     {v}
                   </div>
