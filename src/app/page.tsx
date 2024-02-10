@@ -17,7 +17,11 @@ export default function Home() {
           </div>
           <div className="flex items-center gap-3">
             <GHStarButton />
-            <Link className="h-6 pt-0.5" href="https://twitter.com/dogfrogfog">
+            <Link
+              aria-label="twitter"
+              className="h-6 pt-0.5"
+              href="https://twitter.com/dogfrogfog"
+            >
               <TwitterLogoIcon />
             </Link>
           </div>
