@@ -13,7 +13,7 @@ export default function Home() {
         <div className="mx-auto flex max-w-5xl justify-between gap-3 md:px-12 lg:px-24">
           <div className="flex flex-col gap-3 text-2xl">
             <h1 className="font-bold">TailwindCSS Carousels ⚡️💨</h1>
-            <p>Bare minimum code for carousel</p>
+            <p>Bare minimum code for fast and lightweight carousel</p>
           </div>
           <div className="flex items-center gap-3">
             <GHStarButton />
