@@ -21,12 +21,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       {!isDev ? (
-        <Script
-          async
-          src="https://analytics.umami.is/script.js"
-          data-website-id={process.env.UMAMI_WEBSITE_ID}
-        />
+        <>
+          <Script
+            async
+            src="https://analytics.umami.is/script.js"
+            data-website-id={process.env.UMAMI_WEBSITE_ID}
+          />
+        </>
       ) : null}
+      <Script async defer src="https://buttons.github.io/buttons.js" />
       <Toaster />
       <body className={inter.className}>
         <main className="[mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_60%,transparent_100%)]; bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]">

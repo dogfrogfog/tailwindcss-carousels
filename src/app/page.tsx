@@ -1,17 +1,30 @@
+import { TwitterLogoIcon } from "@radix-ui/react-icons";
+import Link from "next/link";
 import { CardComponent } from "@/components/Card";
+import { GHStarButton } from "@/components/GHStarButton";
 import { getPrevAndNextIndex } from "@/utils";
 
 const slider = ["1", "2", "3", "4", "5"];
 
 export default function Home() {
   return (
-    <main className="min-h-screen gap-24 p-3 md:p-12 lg:p-24">
-      <h1 className="mb-24 text-center text-2xl">
-        Minimal tailwind CSS carousels with{" "}
-        <span className="font-bold">0 Javascript</span>.
-      </h1>
+    <div className="relative min-h-screen gap-24 p-3">
+      <div className="fixed left-0 top-0 z-20 w-full rounded border-b p-3 backdrop-blur-md">
+        <div className="flex max-w-5xl justify-between gap-3 md:px-12 lg:px-24">
+          <div className="flex flex-col gap-3 text-2xl">
+            <h1 className="font-bold">TailwindCSS Carousels ⚡️💨</h1>
+            <p>Bare minimum code for carousel</p>
+          </div>
+          <div className="flex items-center gap-3">
+            <GHStarButton />
+            <Link className="h-6 pt-0.5" href="https://twitter.com/dogfrogfog">
+              <TwitterLogoIcon />
+            </Link>
+          </div>
+        </div>
+      </div>
 
-      <div className="mx-auto max-w-5xl space-y-12">
+      <div className="mx-auto mt-24 max-w-5xl space-y-12 md:p-12 lg:p-24">
         <CardComponent title="Snap to center">
           <div className="flex snap-x snap-mandatory snap-center flex-nowrap gap-3 overflow-x-scroll">
             {slider.map((s) => (
@@ -111,6 +124,6 @@ export default function Home() {
           </div>
         </CardComponent>
       </div>
-    </main>
+    </div>
   );
 }
