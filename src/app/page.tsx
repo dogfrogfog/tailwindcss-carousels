@@ -1,5 +1,7 @@
 const slider = ["1", "2", "3", "4", "5"];
 
+import "./style.css";
+
 function getPrevAndNextIndex(index: number, length: number) {
   const prev = index === 0 ? length - 1 : index - 1;
   const next = index === length - 1 ? 0 : index + 1;
@@ -139,9 +141,32 @@ export default function Home() {
                     htmlFor={`carousel-${next + 1}`}
                     className="absolute bottom-[50%] right-4 top-[50%] my-auto hidden h-8 w-8 rotate-45 cursor-pointer border-4 border-gray-500 bg-gray-100 peer-checked:block"
                   ></label>
+                  {/* <div
+                    key={v}
+                    className={`absolute bottom-4 left-0 right-0 h-4 w-4 bg-red-50`}
+                  > */}
+                  {/* <label
+                      htmlFor={`carousel-${i + 1}`}
+                      className={`block cursor-pointer text-2xl text-white hover:border-gray-300`}
+                    >
+                      •
+                    </label> */}
+                  {/* </div> */}
                 </div>
               );
             })}
+            {/* <ol className="carousel-indicators absolute bottom-2 flex w-full list-none justify-center">
+              {["Carousel", "Without", "Javascript"].map((v, i) => (
+                <li key={v} className="mx-1 inline-block">
+                  <label
+                    htmlFor={`carousel-${i + 1}`}
+                    className="carousel-bullet block cursor-pointer text-2xl text-white hover:border-gray-300"
+                  >
+                    •
+                  </label>
+                </li>
+              ))}
+            </ol> */}
           </div>
         </div>
       </div>
