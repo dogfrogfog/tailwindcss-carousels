@@ -1,10 +1,7 @@
-const slider = ["1", "2", "3", "4", "5"];
+import { CardComponent } from "@/components/Card";
+import { getPrevAndNextIndex } from "@/utils";
 
-function getPrevAndNextIndex(index: number, length: number) {
-  const prev = index === 0 ? length - 1 : index - 1;
-  const next = index === length - 1 ? 0 : index + 1;
-  return { prev, next };
-}
+const slider = ["1", "2", "3", "4", "5"];
 
 export default function Home() {
   return (
@@ -15,12 +12,7 @@ export default function Home() {
       </h1>
 
       <div className="mx-auto max-w-5xl space-y-12">
-        {/* SNAP TO CENTER CAROUSEL */}
-        <div>
-          <div className="mb-3 flex justify-between">
-            <h2 className="text-xl font-bold">Snap to center</h2>
-            <button>copy button</button>
-          </div>
+        <CardComponent title="Snap to center">
           <div className="flex snap-x snap-mandatory snap-center flex-nowrap gap-3 overflow-x-scroll">
             {slider.map((s) => (
               <div
@@ -31,14 +23,9 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </div>
+        </CardComponent>
 
-        {/* SNAP TO START CAROUSEL */}
-        <div>
-          <div className="mb-3 flex justify-between">
-            <h2 className="text-xl font-bold">Snap to start</h2>
-            <button>copy button</button>
-          </div>
+        <CardComponent title="Snap to start">
           <div className="flex snap-x snap-mandatory snap-start flex-nowrap gap-3 overflow-x-scroll">
             {slider.map((s) => (
               <div
@@ -49,14 +36,9 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </div>
+        </CardComponent>
 
-        {/* SNAP TO END CAROUSEL */}
-        <div>
-          <div className="mb-3 flex justify-between">
-            <h2 className="text-xl font-bold">Snap to end</h2>
-            <button>copy button</button>
-          </div>
+        <CardComponent title="Snap to end">
           <div className="flex snap-x snap-mandatory snap-end flex-nowrap gap-3 overflow-x-scroll">
             {slider.map((s) => (
               <div
@@ -67,14 +49,9 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </div>
+        </CardComponent>
 
-        {/* WIDE SNAP TO START CAROUSEL */}
-        <div>
-          <div className="mb-3 flex justify-between">
-            <h2 className="text-xl font-bold">Wide snap to start</h2>
-            <button>copy button</button>
-          </div>
+        <CardComponent title="Wide snap to start">
           <div className="flex snap-x snap-mandatory snap-start flex-nowrap gap-3 overflow-x-scroll">
             {slider.map((s) => (
               <div
@@ -85,14 +62,9 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </div>
+        </CardComponent>
 
-        {/* VERTICAL CAROUSEL */}
-        <div>
-          <div className="mb-3 flex justify-between">
-            <h2 className="text-xl font-bold">Vertical</h2>
-            <button>copy button</button>
-          </div>
+        <CardComponent title="Vertical">
           <div className="max-h-24 snap-y snap-mandatory snap-start space-y-3 overflow-y-scroll">
             {slider.map((s) => (
               <div
@@ -103,15 +75,9 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </div>
+        </CardComponent>
 
-        {/* CAROUSEL WITH ARROW BUTTONS */}
-        <div>
-          <div className="mb-3 flex justify-between">
-            <h2 className="text-xl font-bold">Carousel with control buttons</h2>
-            <button>copy button</button>
-          </div>
-
+        <CardComponent title="Carousel with control buttons">
           <div className="relative h-48 w-full overflow-hidden">
             {slider.map((v, i) => {
               const { prev, next } = getPrevAndNextIndex(i, slider.length);
@@ -143,7 +109,7 @@ export default function Home() {
               );
             })}
           </div>
-        </div>
+        </CardComponent>
       </div>
     </main>
   );
