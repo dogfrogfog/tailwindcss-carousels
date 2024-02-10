@@ -8,9 +8,9 @@ const slider = ["1", "2", "3", "4", "5"];
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen gap-24 p-3">
+    <div className="relative mx-auto min-h-screen gap-24 p-3">
       <div className="fixed left-0 top-0 z-20 w-full rounded border-b p-3 backdrop-blur-md">
-        <div className="flex max-w-5xl justify-between gap-3 md:px-12 lg:px-24">
+        <div className="mx-auto flex max-w-5xl justify-between gap-3 md:px-12 lg:px-24">
           <div className="flex flex-col gap-3 text-2xl">
             <h1 className="font-bold">TailwindCSS Carousels ⚡️💨</h1>
             <p>Bare minimum code for carousel</p>
