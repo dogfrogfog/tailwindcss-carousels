@@ -24,7 +24,7 @@ export default function RootLayout({
         <Script
           async
           src="https://analytics.umami.is/script.js"
-          data-website-id="4dcad347-970e-4cd4-8b3e-79237dd9bbc2"
+          data-website-id={process.env.UMAMI_WEBSITE_ID}
         />
       ) : null}
       <Toaster />
