@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://tailwindcss-carousels.dogfrogfog.ch/sitemap.xml",
+    sitemap: "https://tailwindcss-carousels.vercel.app/sitemap.xml",
   };
 }
