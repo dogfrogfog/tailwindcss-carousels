@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   twitter: {
     images: "/opengraph-image.png",
   },
+  metadataBase: new URL("https://tailwindcss-carousels.vercel.app"),
 };
 
 export default function RootLayout({
@@ -37,7 +38,6 @@ export default function RootLayout({
           />
         </>
       ) : null}
-      <Script async defer src="https://buttons.github.io/buttons.js" />
       <Toaster />
       <body className={inter.className}>
         <main className="bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]">
