@@ -91,7 +91,7 @@ export default function Home() {
         </CardComponent>
 
         <CardComponent title="Carousel with control buttons">
-          <div className="relative h-24 w-full overflow-hidden">
+          <div className="relative w-full overflow-hidden">
             {slider.map((v, i) => {
               const { prev, next } = getPrevAndNextIndex(i, slider.length);
 
@@ -105,9 +105,7 @@ export default function Home() {
                     aria-hidden="true"
                     defaultChecked={i === 0}
                   />
-                  <div
-                    className={`absolute h-full w-full border-4 border-gray-500 bg-gray-400 text-3xl text-white opacity-0 transition-all peer-checked:static peer-checked:opacity-100`}
-                  >
+                  <div className="absolute h-24 w-full border-4 border-gray-500 bg-gray-400 text-3xl text-white opacity-0 transition-all duration-500 peer-checked:static peer-checked:opacity-100">
                     {v}
                   </div>
                   <label
