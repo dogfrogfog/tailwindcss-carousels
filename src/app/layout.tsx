@@ -7,8 +7,10 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Tailwind Carousels",
-  description: "0 javascript carousels with tailwind CSS",
+  title:
+    "TailwindCSS Carousels ⚡️💨 | Examples of 0 javascript carousel components implemented with TailwindCSS",
+  description:
+    "Explore TailwindCSS Carousels – lightweight, speedy, and user-friendly carousels  that are easy to copy and paste into your project within seconds! Effortless enhance your web design and performance.",
 };
 
 export default function RootLayout({
