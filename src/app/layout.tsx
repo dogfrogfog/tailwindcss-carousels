@@ -11,6 +11,12 @@ export const metadata: Metadata = {
     "TailwindCSS Carousels ⚡️💨 | Examples of 0 javascript carousel components implemented with TailwindCSS",
   description:
     "Explore TailwindCSS Carousels – lightweight, speedy, and user-friendly carousels  that are easy to copy and paste into your project within seconds! Effortless enhance your web design and performance.",
+  openGraph: {
+    images: "/opengraph-image.png",
+  },
+  twitter: {
+    images: "/opengraph-image.png",
+  },
 };
 
 export default function RootLayout({
@@ -34,7 +40,7 @@ export default function RootLayout({
       <Script async defer src="https://buttons.github.io/buttons.js" />
       <Toaster />
       <body className={inter.className}>
-        <main className="[mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_60%,transparent_100%)]; bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]">
+        <main className="bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_60%,transparent_100%)]">
           {children}
         </main>
       </body>
